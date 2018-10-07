@@ -2,7 +2,7 @@ import telebot
 import time
 from telebot.types import Message
 
-token = "651370725:AAHmpDhzbliT9KjqOGbPrELzZ4VPrYb4RuQ"
+
 bot = telebot.TeleBot(token, threaded=False)
 
 
