@@ -1,5 +1,5 @@
 import telebot
-# import time
+import time
 from telebot.types import Message
 
 token = "651370725:AAHmpDhzbliT9KjqOGbPrELzZ4VPrYb4RuQ"
@@ -52,7 +52,13 @@ def echo_digits(message: Message):
         else:
             bot.reply_to(message, "Ну ты и дерьмо отправил, додик. Хуёвый Мэм, бан, дисреспект")
 
-
+"""
 if __name__ == '__main__':
     bot.polling(none_stop=True)
+"""
 
+while True:
+    try:
+        bot.polling()
+    except Exception:
+        time.sleep(15)
