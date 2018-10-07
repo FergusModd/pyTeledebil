@@ -5,6 +5,8 @@ from telebot.types import Message
 token = "651370725:AAHmpDhzbliT9KjqOGbPrELzZ4VPrYb4RuQ"
 bot = telebot.TeleBot(token)
 
+
+"""
 def log(message, answer):
     print("\n -------")
     from datetime import datetime
@@ -14,11 +16,8 @@ def log(message, answer):
                                                                    str(message.from_user.id),
                                                                    message.text))
     print(answer)
+"""
 
-@bot.message_handler(content_types=["text"])
-def log_handler(message: Message):
-    answer = "ass"
-    log(message, answer)
 
 @bot.message_handler(commands=["start", "help", "settings"])
 def command_handler(message: Message):
@@ -52,13 +51,6 @@ def echo_digits(message: Message):
         else:
             bot.reply_to(message, "Ну ты и дерьмо отправил, додик. Хуёвый Мэм, бан, дисреспект")
 
-"""
+            
 if __name__ == '__main__':
     bot.polling(none_stop=True)
-"""
-
-while True:
-    try:
-        bot.polling()
-    except Exception:
-        time.sleep(15)
