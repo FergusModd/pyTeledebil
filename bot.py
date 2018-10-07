@@ -3,20 +3,7 @@ import time
 from telebot.types import Message
 
 token = "651370725:AAHmpDhzbliT9KjqOGbPrELzZ4VPrYb4RuQ"
-bot = telebot.TeleBot(token)
-
-
-"""
-def log(message, answer):
-    print("\n -------")
-    from datetime import datetime
-    print(datetime.now())
-    print("Сообщение от {0} {1}. (id = {2}) \n Текст - {3}".format(message.from_user.first_name,
-                                                                   message.from_user.last_name,
-                                                                   str(message.from_user.id),
-                                                                   message.text))
-    print(answer)
-"""
+bot = telebot.TeleBot(token, threaded=False)
 
 
 @bot.message_handler(commands=["start", "help", "settings"])
@@ -52,4 +39,10 @@ def echo_digits(message: Message):
             bot.reply_to(message, "Ну ты и дерьмо отправил, додик. Хуёвый Мэм, бан, дисреспект")
 
             
-bot.polling(none_stop=True, interval=0)
+while True:
+    try:
+        bot.polling(none_stop=True)
+    except Exception as e:
+        logger.print(e)  # или просто print(e) если у вас логгера нет,
+        # или import traceback; traceback.print_exc() для печати полной инфы
+        time.sleep(15)
