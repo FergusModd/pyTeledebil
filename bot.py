@@ -40,9 +40,9 @@ def echo_digits(message: Message):
 @bot.message_handler(content_types=["sticker"])
 def echo_digits(message: Message):
         if str(message.from_user.id) == "295674037":
-            bot.reply_to(message, "Блин-блинский, крутой стикер, да и подметил ты ловко. Вот бы все так делали")
+            bot.reply_to(message, "Не позорься")
         else:
-            bot.reply_to(message, "Господи, ну ты и хуебес. За стикеры эти молодёжные-дерьмосраные ты у меня такого члену получишь")
+            bot.reply_to(message, "Господи, ну ты и хуебес. Сейчас бан словишь")
 
 
 @bot.message_handler(content_types=["photo"])
