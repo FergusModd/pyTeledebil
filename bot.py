@@ -52,5 +52,4 @@ def echo_digits(message: Message):
             bot.reply_to(message, "Ну ты и дерьмо отправил, додик. Хуёвый Мэм, бан, дисреспект")
 
             
-if __name__ == '__main__':
-    bot.polling(none_stop=True)
+bot.polling(none_stop=True, interval=0)
